@@ -44,7 +44,6 @@ public class Movimiento : MonoBehaviour {
 		}
 
         float delta = .1f;
-
 		if(Input.GetKey(KeyCode.A)) {
 			//print("frame anterior estaba presionada, este frame sigo");
 			transform.Translate(-delta, 0, 0);
