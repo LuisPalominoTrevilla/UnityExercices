@@ -304,6 +304,8 @@ GameObject:
   - component: {fileID: 228532989}
   - component: {fileID: 228532988}
   - component: {fileID: 228532987}
+  - component: {fileID: 228532992}
+  - component: {fileID: 228532991}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -387,6 +389,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &228532991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228532986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1eec3f318c8da4e922d1419143f95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 1.5
+  speed: 2
+--- !u!114 &228532992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228532986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1eec3f318c8da4e922d1419143f95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 1.5
+  speed: 2
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +500,7 @@ GameObject:
   - component: {fileID: 1190038046}
   - component: {fileID: 1190038045}
   - component: {fileID: 1190038049}
+  - component: {fileID: 1190038050}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -562,6 +591,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
+--- !u!114 &1190038050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190038044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1eec3f318c8da4e922d1419143f95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: 7
+  speed: 2
 --- !u!1 &1800269547
 GameObject:
   m_ObjectHideFlags: 0
