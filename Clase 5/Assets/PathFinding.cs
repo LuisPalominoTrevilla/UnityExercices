@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class PathFinding {
 
-    public List<Nodo> BreadthwiseSearch(Nodo start, Nodo end)
+    public static List<Nodo> BreadthwiseSearch(Nodo start, Nodo end)
     {
+        List<Nodo> resultado = new List<Nodo>();
         List<Nodo> visitados = new List<Nodo>();
         Queue<Nodo> work = new Queue<Nodo>();
 
@@ -20,8 +21,9 @@ public class PathFinding {
             if (actual == end)
             {
                 // encontramos el nodo
-                actual.historial.Add(actual);
-                return actual.historial;
+                resultado = actual.historial;
+                resultado.Add(actual);
+                return resultado;
             }
             else
             {
@@ -29,16 +31,14 @@ public class PathFinding {
                 Nodo[] vecinos = actual.vecinos;
                 for( int i = 0; i < vecinos.Length; i++)
                 {
-                    if (!visitados.Contains(vecinos[i]))
+                    Nodo vecinoActual = vecinos[i];
+                    if (!visitados.Contains(vecinoActual))
                     {
-                        vecinos[i].historial = new List<Nodo>();
-                        foreach (Nodo n in actual.historial)
-                        {
-                            vecinos[i].historial.Add(n);
-                        }
-                        vecinos[i].historial.Add(actual);
-                        visitados.Add(vecinos[i]);
-                        work.Enqueue(vecinos[i]);
+                        vecinoActual.historial = new List<Nodo>(actual.historial);
+                        vecinoActual.historial.Add(actual);
+
+                        visitados.Add(vecinoActual);
+                        work.Enqueue(vecinoActual);
                     }
                 }
             }
