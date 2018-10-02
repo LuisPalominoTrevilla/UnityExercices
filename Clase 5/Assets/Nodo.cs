@@ -6,8 +6,16 @@ public class Nodo : MonoBehaviour {
 
     public Nodo[] vecinos;
     public List<Nodo> historial;
-	// Use this for initialization
-	void Start () {
+    public float g, h;
+
+    // Properties
+    public float F {
+        get {
+            return g + h;
+        }
+    }
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

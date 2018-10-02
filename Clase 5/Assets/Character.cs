@@ -40,7 +40,7 @@ public class Character : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.Y))
         {
-            List<Nodo> ruta = PathFinding.BreadthwiseSearch(this.start, this.end);
+            List<Nodo> ruta = PathFinding.AStar(this.start, this.end);
             for (int i = 0; i < ruta.Count; i++)
             {
                 print(ruta[i]);
