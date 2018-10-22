@@ -6,17 +6,29 @@ public class Enemy : MonoBehaviour {
 
     public Node[] path;
     private int curr_node;
+    Animator animator;
+    private bool isAlive;
 
 	// Use this for initialization
 	void Start () {
         this.curr_node = 0;
         StartCoroutine(this.followPath());
+        this.animator = GetComponent<Animator>();
+        this.isAlive = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.LookAt(this.path[this.curr_node].transform);
-        this.transform.Translate(0, 0, 2f * Time.deltaTime);
+        if (this.isAlive)
+        {
+            this.transform.LookAt(this.path[this.curr_node].transform);
+            this.transform.Translate(0, 0, 2f * Time.deltaTime);
+        }
+        else
+        {
+            this.StartCoroutine(this.dissapear());
+            
+        }
 	}
 
     IEnumerator followPath()
@@ -36,7 +48,15 @@ public class Enemy : MonoBehaviour {
     {
         if(collision.gameObject.name == "Bullet(Clone)")
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            this.animator.SetTrigger("hasDied");
+            this.isAlive = false;
         }
+    }
+
+    IEnumerator dissapear()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(this.gameObject);
     }
 }

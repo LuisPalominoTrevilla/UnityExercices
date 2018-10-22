@@ -8,7 +8,7 @@ public class CanonBall : MonoBehaviour {
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
-        this.rb.AddForce(this.transform.forward * 10, ForceMode.Impulse);
+        this.rb.AddForce(this.transform.forward * 8, ForceMode.Impulse);
     }
 
     // Update is called once per frame
