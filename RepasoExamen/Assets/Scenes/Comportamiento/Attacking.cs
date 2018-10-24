@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Comiendo : MonoBehaviour {
+public class Attacking : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +11,6 @@ public class Comiendo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
 }
